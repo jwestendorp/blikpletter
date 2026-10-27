@@ -60,6 +60,8 @@ const query = new URLSearchParams(location.search)
 const initialPreset = PRESETS[query.get('preset') ?? ''] ? query.get('preset')! : 'flattened'
 const metalQuery = query.get('metal')
 const fitQuery = query.get('fit') as Fit | null
+// blikpletter.be starts with Cara Pils, everywhere else with De Klok
+const initialLabel = location.hostname.endsWith('.be') ? 'Cara Pils' : 'De Klok'
 
 export const useCan = create<State>()((set) => ({
   params: presetParams(initialPreset),
@@ -67,12 +69,12 @@ export const useCan = create<State>()((set) => ({
   userDents: [],
   dentMode: false,
   skin: {
-    label: 'De Klok',
+    label: initialLabel,
     fit: fitQuery && ['stretch', 'cover', 'contain'].includes(fitQuery) ? fitQuery : 'stretch',
     inkMetalness: 0,
     inkRoughness: 0.35,
     shift: Number(query.get('shift')) || 0,
-    metalColor: (metalQuery && (METALS[metalQuery] ?? metalQuery)) || METALS.silver,
+    metalColor: (metalQuery && (METALS[metalQuery] ?? metalQuery)) || LABELS[initialLabel].metal || METALS.silver,
   },
   customImage: null,
   customName: 'custom',
