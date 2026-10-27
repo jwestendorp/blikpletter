@@ -2,7 +2,7 @@
 
 Plet hier je virtuele blik zonder statiegeld. Crush a 3D beer can in the browser.
 
-**Live:** https://jwestendorp.github.io/blikpletter/
+**Live:** https://blikpletter.nl and https://blikpletter.be
 
 - **Play:** press **Crush!** to watch the can collapse into the current crush. Turn on **Dent**, then tap or click the can to punch dents where you hit it (on desktop, shift+click works too).
 - **Adjust:** load a preset (stomped, flattened (the default), squeezed, dented, wrecked), randomize, or reset, then tune every part of the crush with the sliders: flattening, crushing from above, squeezing and twisting, creases and dents, and the lid.
@@ -10,7 +10,7 @@ Plet hier je virtuele blik zonder statiegeld. Crush a 3D beer can in the browser
 
 ## Other cans
 
-The De Klok label is the default. Under **Save → Label** you can pick Cara Pils (which also switches the metal to its near-white #FAFFFF) or upload your own image (or drop one onto the page).
+The De Klok label is the default, except on blikpletter.be, which starts with Cara Pils. Under **Save → Label** you can pick Cara Pils (which also switches the metal to its near-white #FAFFFF) or upload your own image (or drop one onto the page).
 
 - An image wraps once around the can, from its left edge to its right edge, with the middle of the image on the front. The ideal shape is about 1.45 × as wide as it is tall. **Download label template** gives a guide showing the front, the sides, the seam and the bands near the rims to keep text out of.
 - **image fit** handles other shapes: stretch, cover (crop) or contain (bare metal around it).
@@ -42,6 +42,6 @@ The can is a dense mesh (about 72,000 vertices). One deformation field moves eve
 
 ## Deployment
 
-Every push to `main` builds the site and publishes it to GitHub Pages (`.github/workflows/deploy.yml`). One-time setup: **Settings → Pages → Source: GitHub Actions**.
+Every push to `main` is built and published by Netlify (see `netlify.toml`). blikpletter.nl and blikpletter.be are both served from the same build.
 
 De Klok, Grolsch, Cara Pils and Colruyt are trademarks of their owners. This is a fan project and is not affiliated with them.

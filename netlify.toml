@@ -1,0 +1,9 @@
+# Netlify builds the site from this repo on every push to main.
+# blikpletter.nl and blikpletter.be both serve this one build; the app picks
+# the default label from the hostname (see initialLabel in src/state.ts).
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"

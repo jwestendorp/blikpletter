@@ -5,7 +5,7 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // relative asset paths, so the build works under /blikpletter/ on GitHub Pages
+  // relative asset paths, so the build works from any base path
   base: './',
   plugins: [react(), tailwindcss()],
   resolve: {
